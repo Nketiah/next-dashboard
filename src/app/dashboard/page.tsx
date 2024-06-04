@@ -4,7 +4,7 @@ import React from 'react'
 
 
 
-export const DashboardHome = () => {
+const DashboardHome = () => {
   return (
     <>
       <section className='flex'>
