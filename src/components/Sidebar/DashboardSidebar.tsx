@@ -18,27 +18,28 @@ import { PiGridFourThin } from "react-icons/pi"
 import { IoStatsChartSharp } from "react-icons/io5"
 import { RiCompasses2Fill } from "react-icons/ri"
 import { RiMapPinLine } from "react-icons/ri"
+import { useMainStateProvider } from '@/context'
 
 
 
 
 const DashboardSidebar = () => {
 
+  const { hideSidebar, setHideSideBar }: any = useMainStateProvider()
   const [toggleDropDownLink, setToggleDropDownLink] = useState<number | null>(null)
   const [toggleSubItem, setToggleSubItem] = useState(false)
 
-  const handleToggleDropDownLink = (linkId: number) => {
-    setToggleDropDownLink(toggleDropDownLink === linkId ? null : linkId)
-  }
+  const handleToggleDropDownLink = (linkId: number) => setToggleDropDownLink(toggleDropDownLink === linkId ? null : linkId)
 
 
 
   return (
     <>
-      <section className='bg-primary-500 h-screen max-w-60 border-r border-primary-500 shadow-lg text-center relative '>
-        <header className='text-white text-2xl text-center font-medium py-2'>Next Admin</header>
-        <section className='overflow-y-auto max-h-[90vh] py-10 pl-5 pr-3'>
-
+      {/* {
+        !hideSidebar && */}
+      <section className={`${hideSidebar ? 'w-0' : 'w-[230px]'} bg-primary-500 h-screen  border-r border-primary-500 shadow-lg text-center relative duration-500`}>
+        <header className={`text-white text-2xl text-center font-medium py-2 duration-500 ${hideSidebar && 'hidden'}`}>Next Admin</header>
+        <section className={`overflow-y-auto max-h-[90vh] py-10 pl-5 pr-3 ${hideSidebar && 'invisible'}`}>
           {navLinks.map((group, index) => {
             return (
               <section key={index}>
@@ -48,7 +49,7 @@ const DashboardSidebar = () => {
                     return (
                       <>
                         <div onClick={() => handleToggleDropDownLink(item.id + 1)} key={index} className='transition-all duration-300 ease-in-out item relative flex items-center justify-between pt-3 pb-3 hover:cursor-pointer'>
-                          <div className={`menu flex items-center gap-3`}>
+                          <div className={`flex items-center gap-3`}>
                             <div className={`${toggleDropDownLink === item.id + 1 ? 'text-white' : 'text-navLight'}`}>{item.icon}</div>
                             <Link href={"#"} className={`text-[15px] ${toggleDropDownLink === item.id + 1 ? 'text-white' : 'text-navLight'}`}>{item.name}</Link>
                           </div>
@@ -71,9 +72,8 @@ const DashboardSidebar = () => {
               </section>
             )
           })}
-
         </section>
-        <footer className='bg-slate-900 h-16 pt-5 absolute bottom-0 inset-x-0 flex gap-3 text-light items-center pb-5'>
+        <footer className={`bg-slate-900 h-16 pt-5 absolute bottom-0 inset-x-0 flex gap-3 text-light items-center pb-5 ${hideSidebar && 'invisible'}`}>
           <Image className='rounded-full h-10 w-10 object-cover ml-3' src={IMG} alt="no-img" />
           <div className='flex flex-col items-start'>
             <p className='text-sm'>Nketiah Joseph</p>
@@ -81,6 +81,7 @@ const DashboardSidebar = () => {
           </div>
         </footer>
       </section>
+      {/* } */}
     </>
   )
 }

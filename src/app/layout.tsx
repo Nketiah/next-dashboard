@@ -1,3 +1,4 @@
+import { StateProvider } from '@/context'
 import './globals.css'
 import { Poppins } from "next/font/google"
 
@@ -20,7 +21,11 @@ export const metadata = {
 export default function RootLayout({children}:{children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <StateProvider>
+          {children}
+        </StateProvider>
+      </body>
     </html>
   )
 }

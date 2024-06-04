@@ -1,3 +1,4 @@
+import MainArea from '@/components/Content/MainArea'
 import DashboardSidebar from '@/components/Sidebar/DashboardSidebar'
 import React from 'react'
 
@@ -6,8 +7,9 @@ import React from 'react'
 export const DashboardHome = () => {
   return (
     <>
-      <section>
+      <section className='flex'>
         <DashboardSidebar/>
+        <MainArea/>
       </section>
     </>
   )
