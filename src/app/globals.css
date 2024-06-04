@@ -1,21 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
+
+/* 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +14,63 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+::-webkit-scrollbar {
+  height: 10px; /* Set the height of the scrollbar */
+  background-color: #405189; /* Set the background color of the scrollbar track */
+  width: 5px;
+  transition: ease;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 70px;
+  background-color: #ABB9E8; /* Set the color of the scrollbar thumb */
+  border-radius: 70px; /* Set the border radius of the scrollbar thumb */
+}
+
+/* Firefox */
+::-moz-scrollbar {
+  height: 5px; /* Set the height of the scrollbar */
+  background-color: #f0f0f0; /* Set the background color of the scrollbar track */
+}
+
+::-moz-scrollbar-thumb {
+  /* height: 50px; */
+  background-color: #ABB9E8; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+}
+
+.hidden-menu{
+  /* display: none; */
+}
+.addTransition{
+  /* display: inline;
+   transition: 3s ease;  */
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.delay {
+  transition-duration: 400ms;
+}
+.rotate-down{
+  transition-duration: 400ms;
+  transform: rotate(90deg);
+}
+.rotate-right {
+  transition-duration: 400ms;
+  transform: rotate(0deg);
 }
