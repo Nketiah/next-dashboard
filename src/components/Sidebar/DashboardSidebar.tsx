@@ -37,7 +37,7 @@ const DashboardSidebar = () => {
     <>
       {/* {
         !hideSidebar && */}
-      <section className={`${hideSidebar ? 'w-0' : 'w-[230px]'} bg-primary-500 h-screen  border-r border-primary-500 shadow-lg text-center relative duration-500`}>
+      <section className={`${hideSidebar ? 'w-0' : 'w-[230px]'}  hidden sm:block bg-primary-500 h-screen  border-r border-primary-500 shadow-lg text-center relative duration-500`}>
         <header className={`text-white text-2xl text-center font-medium py-2 duration-500 ${hideSidebar && 'hidden'}`}>Next Admin</header>
         <section className={`overflow-y-auto max-h-[90vh] py-10 pl-5 pr-3 ${hideSidebar && 'invisible'}`}>
           {navLinks.map((group, index) => {
