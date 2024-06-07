@@ -180,6 +180,9 @@ export const navLinks = [
 
 ]
 
+
+
+
 /*
 
 className={`pl-8 transform text-navLight transition-all duration-300 ease-in-out translate-y-0 opacity-100 scale-y-100 origin-top delay-100 ${toggleDropDownLink === item.id + 1 ? '' : 'translate-y-4 opacity-0 scale-y-0'}`}>

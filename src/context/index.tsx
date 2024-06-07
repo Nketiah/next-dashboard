@@ -9,10 +9,13 @@ export const StateProvider = ({ children }: any): any => {
 
     const [isMobile, setIsMobile] = useState(false)
     const [hideSidebar, setHideSideBar] = useState(false)
+    const [toggleProfileDropDown, setToggleProfileDown] = useState(false)
+
 
     const values = {
         hideSidebar, setHideSideBar,
-        isMobile, setIsMobile
+        isMobile, setIsMobile,
+        toggleProfileDropDown, setToggleProfileDown
     }
 
 
@@ -20,7 +23,8 @@ export const StateProvider = ({ children }: any): any => {
         () => values,
         [
             hideSidebar, setHideSideBar,
-            isMobile, setIsMobile
+            isMobile, setIsMobile,
+            toggleProfileDropDown, setToggleProfileDown
         ]
     )
 

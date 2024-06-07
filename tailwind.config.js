@@ -45,8 +45,6 @@ module.exports = {
         light: "#ABB9E8",
         navLight: "#ABB9E8",
         sidebarTitle: "#838fb9",
-        // cardText: "#878A99",
-        // appBlue: "rgb(41 156 219)",
       },
       fontFamily:{}
     },
