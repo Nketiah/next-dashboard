@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { RxHamburgerMenu } from "react-icons/rx"
 import Navbar from '../Header/Navbar'
@@ -7,13 +8,19 @@ import { AiOutlineDollarCircle } from "react-icons/ai"
 import { FaRegUserCircle } from "react-icons/fa"
 import { RiWalletLine } from "react-icons/ri"
 import Card from '../Card'
+import { useSession } from 'next-auth/react'
 
 
 
 
 const MainArea = () => {
+
+const { data: session } = useSession() as { data: any }
+
+
   return (
     <>
+    {/* {JSON.stringify(session)} */}
       <section className='h-screen overflow-y-auto flex-1 '>
         <Navbar />
         <main className='relative'>
