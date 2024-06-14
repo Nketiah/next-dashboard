@@ -25,6 +25,8 @@ module.exports = {
         appBlue: {
           "100": "#dff0fa",
           "500": "rgb(41 156 219)",
+          "600": "#3E71CA",
+          "700": "#2F60B3"
         },
         appDark: {
           "50": "#e2e5ed",
@@ -50,4 +52,5 @@ module.exports = {
     },
   },
   plugins: [],
+
 }

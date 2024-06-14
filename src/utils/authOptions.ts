@@ -5,6 +5,7 @@ import { NextAuthOptions } from 'next-auth'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { db } from './db'
 import bcrypt from "bcryptjs"
+import { User } from '@prisma/client'
 
 
 export const authOptions: NextAuthOptions = {
@@ -53,7 +54,7 @@ export const authOptions: NextAuthOptions = {
                 where: {email: credentials?.email}
               })
               if(!user){
-                return null
+                throw new Error("User not found") 
               }
               const passwordMatch = await bcrypt.compare(credentials.password,user.password)
               if(!passwordMatch){
@@ -70,18 +71,13 @@ export const authOptions: NextAuthOptions = {
     callbacks: {
         async jwt({token,user}){
           if(user){
-            return {...token, name: user.name}
+            token.user = user as User
           }
           return token
         },
-        async session({session, token}){
-          return {
-            ...session,
-            user: {
-              ...session.user,
-              name: token.name
-            }
-          }
+        async session({token, session}){
+          session.user = token.user
+          return session
         }
     }
 }

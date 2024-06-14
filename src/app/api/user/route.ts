@@ -29,8 +29,9 @@ export async function POST(req: Request){
         const newUser = await db.user.create({
             data: {email, password: hashedPassword, name}
         })
-         newUser.password = undefined as any
-        return NextResponse.json({user: newUser, message: "User created"},{status: 201})
+        //  newUser.password = undefined as any
+        const {password: newUserPassword, ...rest} = newUser
+        return NextResponse.json({user: rest, message: "User created"},{status: 201})
        
     } catch (error) {
         

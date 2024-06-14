@@ -15,12 +15,11 @@ import { useSession } from 'next-auth/react'
 
 const MainArea = () => {
 
-const { data: session } = useSession() as { data: any }
+const { data: session } = useSession() //as { data: any }
 
 
   return (
     <>
-    {/* {JSON.stringify(session)} */}
       <section className='h-screen overflow-y-auto flex-1 '>
         <Navbar />
         <main className='relative'>
@@ -32,6 +31,7 @@ const { data: session } = useSession() as { data: any }
         </div>
         </main>
       </section>
+      {JSON.stringify(session?.user)}
     </>
   )
 }

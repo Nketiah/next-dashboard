@@ -32,6 +32,7 @@ export default function RootLayout({children}:{children: React.ReactNode}) {
           {children}
           </SessionProvider>
         </StateProvider>
+        {/* <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script> */}
       </body>
     </html>
   )

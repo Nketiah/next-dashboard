@@ -18,7 +18,7 @@ const handleUserLogin = async(e:any) => {
       redirect: false
     })
     if(singnInData?.error) {
-        console.log("singnInData",singnInData?.error)
+        console.log("repp",singnInData)
     }else {
       router.push("/dashboard")
     }
