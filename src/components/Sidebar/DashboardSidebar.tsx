@@ -53,7 +53,7 @@ const DashboardSidebar = () => {
                             <div className={`${toggleDropDownLink === item.id + 1 ? 'text-white' : 'text-navLight'}`}>{item.icon}</div>
                             <Link href={"#"} className={`text-[15px] ${toggleDropDownLink === item.id + 1 ? 'text-white' : 'text-navLight'}`}>{item.name}</Link>
                           </div>
-                          <ArrowRightIcon size={11} className={`${toggleDropDownLink === item.id + 1 ? 'rotate-down' : 'rotate-right'} `} />
+                          {item.icon && <ArrowRightIcon size={11} className={`${toggleDropDownLink === item.id + 1 ? 'rotate-down' : 'rotate-right'} `} />}
                         </div>
                         <section className={`transition-all delay ease-linear ${toggleDropDownLink === item.id + 1 ? 'max-h-96' : 'max-h-0 overflow-hidden'}`}>
                           <div>
@@ -96,38 +96,33 @@ export const navLinks = [
       {
         id: 1,
         href: "/dashboard",
-        name: "Dashboards",
+        name: "Students",
         icon: <VscDashboard size={20} />,
         subLinks: [
-          { id: 1, name: "Analytics", href: "/analytics" },
-          { id: 2, name: "CRM", href: "/crm" },
-          { id: 3, name: "Ecommerce", href: "/ecommerce" },
-          { id: 4, name: "Crypto", href: "/crypto" },
-          { id: 5, name: "Projects", href: "/projects" },
-          { id: 6, name: "NFT", href: "/nft" },
-          { id: 7, name: "Job", href: "/job" },
+          { id: 1, name: "New Student", href: "/dashboard/student" },
+          { id: 2, name: "View Students", href: "/dashboard/student/viewall" },
+          { id: 3, name: "View By Grade", href: "/dashboard/student/viewByGrade" },   
         ]
       },
       {
         id: 2,
-        href: "/apps",
-        name: "Apps",
+        href: "/teachers",
+        name: "Teachers",
         icon: <RxDashboard size={20} />,
-        subLinks: []
+        subLinks: [
+          { id: 1, name: "New Teacher",   href: "/dashboard/teacher" },
+          { id: 2, name: "View Teachers", href: "/dashboard/teacher/viewall" },
+          { id: 3, name: "View Subjects", href: "/dashboard/teacher/viewSubjects" },
+        ]
       },
       {
         id: 3,
-        href: "/layouts",
-        name: "Layouts",
+        href: "/parents",
+        name: "Parents",
         icon: <AiOutlineLayout size={20} />,
         subLinks: [
           { id: 1, name: "Analytics", href: "/analytics" },
           { id: 2, name: "CRM", href: "/crm" },
-          { id: 3, name: "Ecommerce", href: "/ecommerce" },
-          { id: 4, name: "Crypto", href: "/crypto" },
-          { id: 5, name: "Projects", href: "/projects" },
-          { id: 6, name: "NFT", href: "/nft" },
-          { id: 7, name: "Job", href: "/job" },
         ]
       }
     ]
@@ -137,38 +132,39 @@ export const navLinks = [
     links: [
       {
         id: 4,
-        href: "/auth",
-        name: "Authentication",
+        href: "/subject",
+        name: "Subject",
         icon: <FaRegUserCircle size={20} />,
-        subLinks: []
+        subLinks: [
+          { id: 1, name: "New Subject", href: "/dashboard/subject" },
+          { id: 2, name: "View Subjects", href: "/dashboard/subject/viewSubjects" },
+          { id: 3, name: "View Assigned", href: "/dashboard/subject/viewAssign" },
+        ]
       },
       {
         id: 5,
-        href: "/pages",
-        name: "Pages",
+        href: "/attendance",
+        name: "Attendance",
         icon: <RiPagesLine size={20} />,
         subLinks: []
       },
       {
         id: 6,
-        href: "/landing",
-        name: "Landing",
+        href: "/exam",
+        name: "Exam",
         icon: <RiSpaceShipFill size={20} />,
         subLinks: []
       }
     ]
   },
   {
-    heading: "components",
+    heading: "General",
     links: [
-      { id: 7,  href: "/base-ui", name: "Base UI", icon: <MdOutlineDesignServices size={20} /> },
-      { id: 8,  href: "/advance-ui", name: "Advance UI", icon: <ImStack size={20} /> },
-      { id: 9,  href: "/widgets", name: "Widgets", icon: <RiHonourLine size={20} /> },
-      { id: 10, href: "/forms", name: "Forms", icon: <LuFileText size={20} /> },
-      { id: 11, href: "/tables", name: "Tables", icon: <PiGridFourThin size={20} /> },
-      { id: 12, href: "/charts", name: "Charts", icon: <IoStatsChartSharp size={20} /> },
-      { id: 13, href: "/icons", name: "Icons", icon: <RiCompasses2Fill size={20} /> },
-      { id: 14, href: "/maps", name: "Maps", icon: <RiMapPinLine size={20} /> },
+      { id: 7,  href: "/notice", name: "Notice" },
+      { id: 8,  href: "/events", name: "Events" },
+      { id: 9,  href: "report", name: "Report" },
+      { id: 10, href: "/sms", name: "SMS & Email" },
+      { id: 11, href: "/settings", name: "Settings"},
     ]
   }
 
@@ -195,6 +191,90 @@ NFT
 Job
 */
 
+// export const navLinks = [
+//   {
+//     heading: "Menu",
+//     links: [
+//       {
+//         id: 1,
+//         href: "/dashboard",
+//         name: "Dashboards",
+//         icon: <VscDashboard size={20} />,
+//         subLinks: [
+//           { id: 1, name: "Analytics", href: "/analytics" },
+//           { id: 2, name: "CRM", href: "/crm" },
+//           { id: 3, name: "Ecommerce", href: "/ecommerce" },
+//           { id: 4, name: "Crypto", href: "/crypto" },
+//           { id: 5, name: "Projects", href: "/projects" },
+//           { id: 6, name: "NFT", href: "/nft" },
+//           { id: 7, name: "Job", href: "/job" },
+//         ]
+//       },
+//       {
+//         id: 2,
+//         href: "/apps",
+//         name: "Apps",
+//         icon: <RxDashboard size={20} />,
+//         subLinks: []
+//       },
+//       {
+//         id: 3,
+//         href: "/layouts",
+//         name: "Layouts",
+//         icon: <AiOutlineLayout size={20} />,
+//         subLinks: [
+//           { id: 1, name: "Analytics", href: "/analytics" },
+//           { id: 2, name: "CRM", href: "/crm" },
+//           { id: 3, name: "Ecommerce", href: "/ecommerce" },
+//           { id: 4, name: "Crypto", href: "/crypto" },
+//           { id: 5, name: "Projects", href: "/projects" },
+//           { id: 6, name: "NFT", href: "/nft" },
+//           { id: 7, name: "Job", href: "/job" },
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     heading: "Pages",
+//     links: [
+//       {
+//         id: 4,
+//         href: "/auth",
+//         name: "Authentication",
+//         icon: <FaRegUserCircle size={20} />,
+//         subLinks: []
+//       },
+//       {
+//         id: 5,
+//         href: "/pages",
+//         name: "Pages",
+//         icon: <RiPagesLine size={20} />,
+//         subLinks: []
+//       },
+//       {
+//         id: 6,
+//         href: "/landing",
+//         name: "Landing",
+//         icon: <RiSpaceShipFill size={20} />,
+//         subLinks: []
+//       }
+//     ]
+//   },
+//   {
+//     heading: "components",
+//     links: [
+//       { id: 7,  href: "/base-ui", name: "Base UI", icon: <MdOutlineDesignServices size={20} /> },
+//       { id: 8,  href: "/advance-ui", name: "Advance UI", icon: <ImStack size={20} /> },
+//       { id: 9,  href: "/widgets", name: "Widgets", icon: <RiHonourLine size={20} /> },
+//       { id: 10, href: "/forms", name: "Forms", icon: <LuFileText size={20} /> },
+//       { id: 11, href: "/tables", name: "Tables", icon: <PiGridFourThin size={20} /> },
+//       { id: 12, href: "/charts", name: "Charts", icon: <IoStatsChartSharp size={20} /> },
+//       { id: 13, href: "/icons", name: "Icons", icon: <RiCompasses2Fill size={20} /> },
+//       { id: 14, href: "/maps", name: "Maps", icon: <RiMapPinLine size={20} /> },
+//     ]
+//   }
+
+// ]
 
 
 
