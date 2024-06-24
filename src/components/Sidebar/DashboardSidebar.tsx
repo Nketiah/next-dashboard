@@ -161,9 +161,9 @@ export const navLinks = [
   {
     heading: "components",
     links: [
-      { id: 7, href: "/base-ui", name: "Base UI", icon: <MdOutlineDesignServices size={20} /> },
-      { id: 8, href: "/advance-ui", name: "Advance UI", icon: <ImStack size={20} /> },
-      { id: 9, href: "/widgets", name: "Widgets", icon: <RiHonourLine size={20} /> },
+      { id: 7,  href: "/base-ui", name: "Base UI", icon: <MdOutlineDesignServices size={20} /> },
+      { id: 8,  href: "/advance-ui", name: "Advance UI", icon: <ImStack size={20} /> },
+      { id: 9,  href: "/widgets", name: "Widgets", icon: <RiHonourLine size={20} /> },
       { id: 10, href: "/forms", name: "Forms", icon: <LuFileText size={20} /> },
       { id: 11, href: "/tables", name: "Tables", icon: <PiGridFourThin size={20} /> },
       { id: 12, href: "/charts", name: "Charts", icon: <IoStatsChartSharp size={20} /> },
@@ -194,3 +194,8 @@ Projects
 NFT
 Job
 */
+
+
+
+
+//    
