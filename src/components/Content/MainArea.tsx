@@ -31,7 +31,7 @@ const { data: session } = useSession() //as { data: any }
         </div>
         </main>
       </section>
-      {JSON.stringify(session?.user)}
+      {/* {JSON.stringify(session?.user)} */}
     </>
   )
 }
